@@ -1,0 +1,35 @@
+<!--pages/weather/weather.wxml-->
+<!-- 整个容器 -->
+<view class="container">
+<!-- 选择城市 -->
+  <picker mode='region' bindchange="changeRegion">
+  {{region}}
+  </picker>
+  <!-- 天气情况 -->
+  <text>{{now.tmp}} ℃ {{now.cond_txt}}</text>
+  <image src="/images/{{now.cond_code}}.png"></image>
+  <!-- 详细信息 -->
+  <view class="box">
+    <view class="bar">
+      <view class="detail">湿度</view>
+      <view class="detail">气压</view>
+      <view class="detail">体感温度</view>
+    </view>
+    <view class="bar">
+      <view class="detail">{{now.hum}}%</view>
+      <view class="detail">{{now.pres}}Pha</view>
+      <view class="detail">{{now.fl}}%</view>
+    </view>
+    <view class="bar">
+      <view class="detail">风向</view>
+      <view class="detail">风力</view>
+      <view class="detail">风级</view>
+    </view>
+    <view class="bar">
+      <view class="detail">{{now.wind_dir}}</view>
+      <view class="detail">{{now.wind_spd}}Km/h</view>
+      <view class="detail">{{now.wind_sc}}级</view>
+    </view>
+  </view>
+</view>
+
